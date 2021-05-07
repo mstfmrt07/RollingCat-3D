@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    public LevelFinisher levelFinisher;
+    public Interactable levelFinisher;
     public Transform spawnPoint;
 }

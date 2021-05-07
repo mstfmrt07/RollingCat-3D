@@ -261,6 +261,7 @@ MonoBehaviour:
   - {fileID: 7016994004881252196, guid: 8e15b86e6f780d548b3e57cf74ccdc15, type: 3}
   - {fileID: 7016994004881252196, guid: 1f508cd03b755d649b31d02253eb8e4d, type: 3}
   - {fileID: 7016994004881252196, guid: e4407faf3ca29ad4199083202a093803, type: 3}
+  - {fileID: 7016994004881252196, guid: c3972c5b7478b8544a45d87f7b573a22, type: 3}
 --- !u!4 &138692555
 Transform:
   m_ObjectHideFlags: 0
@@ -285,8 +286,8 @@ GameObject:
   m_Component:
   - component: {fileID: 143394747}
   - component: {fileID: 143394746}
-  - component: {fileID: 143394748}
   - component: {fileID: 143394745}
+  - component: {fileID: 143394748}
   m_Layer: 0
   m_Name: Deadzone
   m_TagString: Untagged
@@ -341,7 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e399a573431f2584a9ade0212a4e1c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finisherType: 1
+  interactableType: 1
+  bridgeTransform: {fileID: 0}
 --- !u!1 &171035758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: -4.42, y: 10.51, z: -12.16}
+  m_FollowOffset: {x: -3.4, y: 10.51, z: -12.44}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1342,7 +1344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.3249564, y: 0.12704244, z: -0.044100434, w: 0.93611896}
-  m_LocalPosition: {x: -4.42, y: 10.51, z: -12.16}
+  m_LocalPosition: {x: -3.4, y: 10.51, z: -12.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2121,7 +2123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950205741}
   m_LocalRotation: {x: 0.3249564, y: 0.12704244, z: -0.044100434, w: 0.93611896}
-  m_LocalPosition: {x: -4.42, y: 10.51, z: -12.16}
+  m_LocalPosition: {x: -3.4, y: 10.51, z: -12.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 868787894}
