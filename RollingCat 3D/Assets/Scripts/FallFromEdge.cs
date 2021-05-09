@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class FallFromEdge : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "ForcePointUp" || other.tag == "ForcePointDown")
+        if (collision.collider.tag == "Player")
         {
             gameObject.SetActive(false);
             PlayerController.Instance.canMove = false;
-            PlayerController.Instance.AddForce(other.tag == "ForcePointUp" ? 0 : 1);
+
+            PlayerController.Instance.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            PlayerController.Instance.GetComponent<Rigidbody>().AddForceAtPosition(-Vector3.up * 100f, collision.GetContact(0).point, ForceMode.Force);
         }
     }
 }

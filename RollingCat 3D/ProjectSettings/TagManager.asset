@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ForcePointDown
-  - ForcePointUp
+  - Deadzone
   layers:
   - Default
   - TransparentFX
@@ -15,7 +14,7 @@ TagManager:
   - UI
   - Ground
   - ContactWall
-  - 
+  - FallEdge
   - 
   - 
   - 

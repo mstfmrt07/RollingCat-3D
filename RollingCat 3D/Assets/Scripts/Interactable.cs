@@ -19,7 +19,12 @@ public class Interactable : MonoBehaviour
                 case InteractableType.LevelFail:
                     GameManager.Instance.GameOver();
                     break;
+                case InteractableType.Collectable:
+                    GameManager.Instance.PickCollectable();
+                    Destroy(gameObject);
+                    break;
                 case InteractableType.ToggleBridge:
+                    Debug.Log("Bridge Toggled");
                     StartCoroutine(ToggleBridge(bridgeTransform, !bridgeTransform.gameObject.activeSelf)); // toggle the reverse state
                     break;
                 default:
@@ -36,12 +41,14 @@ public class Interactable : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        if (PlayerController.Instance.dominantAxis == DominantAxis.Y)
+        if (PlayerController.Instance.dominantAxis == DominantAxis.Y && !GameManager.Instance.gameOver)
             GameManager.Instance.FinishLevel();
     }
 
     IEnumerator ToggleBridge(Transform bridge, bool toggleState)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Instance.toggleClip);
+
         bool willSetAfterToggle = false;
         if (!bridgeTransform.gameObject.activeSelf)
             bridgeTransform.gameObject.SetActive(true);
@@ -62,4 +69,4 @@ public class Interactable : MonoBehaviour
     }
 }
 
-public enum InteractableType { LevelSuccess, LevelFail, ToggleBridge}
+public enum InteractableType { LevelSuccess, LevelFail, ToggleBridge, Collectable}

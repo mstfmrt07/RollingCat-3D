@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!GameManager.Instance.gameStarted)
+        if (!GameManager.Instance.gameStarted && GameManager.Instance.canStartGame)
             GameManager.Instance.StartLevel();
 
         draggingStarted = true;

@@ -133,16 +133,16 @@ public class PlayerController : MonoBehaviour
             transform.rotation = endRotation;
             transform.position = endPosition;
 
-            Debug.Log("Rolled to the " + swipeDirection);
-            Debug.Log("Dominant Axis: " + dominantAxis);
             isRolling = false;
             
             pivotPoint = transform.position;
             pivot.position = pivotPoint;
+
+            SoundManager.Instance.PlaySound(SoundManager.Instance.swipeClip);
         }
     }
 
-    void CopyTransformData(Transform target)
+    public void CopyTransformData(Transform target)
     {
         target.localPosition = transform.localPosition;
         target.localEulerAngles = transform.localEulerAngles;
@@ -167,12 +167,6 @@ public class PlayerController : MonoBehaviour
             }
         }
         return DominantAxis.None;
-    }
-
-    public void AddForce(int pointIndex)
-    {
-        GetComponent<Rigidbody>().constraints =  RigidbodyConstraints.None;
-        GetComponent<Rigidbody>().AddForceAtPosition(-Vector3.up * 100f, forcePoints[pointIndex].position, ForceMode.Force);
     }
 
     private void OnDrawGizmosSelected()

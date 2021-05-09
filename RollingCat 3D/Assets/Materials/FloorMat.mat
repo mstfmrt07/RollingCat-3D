@@ -10,7 +10,7 @@ Material:
   m_Name: FloorMat
   m_Shader: {fileID: 4800000, guid: 881c73b45dda42d4ba29f8c7742329be, type: 3}
   m_ShaderKeywords: _MK_ALBEDO_MAP _MK_LIGHTMODEL_LAMBERT _MK_LIGHTTYPE_CEL_SHADE_SIMPLE
-    _MK_RIM
+    _MK_RIM _MK_SKETCH _USERIM_ON _USESKETCH_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -123,7 +123,7 @@ Material:
     - _MKEditorShowRenderBehavior: 1
     - _MKEditorShowRimBehavior: 1
     - _MKEditorShowShadowBehavior: 1
-    - _MKEditorShowSketchBehavior: 0
+    - _MKEditorShowSketchBehavior: 1
     - _MKEditorShowSpecularBehavior: 0
     - _MKEditorShowTranslucentBehavior: 0
     - _Metallic: 0
@@ -133,8 +133,8 @@ Material:
     - _Parallax: 0.02
     - _ReflectIntensity: 0.5
     - _ReflectSmoothness: 0
-    - _RimIntensity: 0.32
-    - _RimSize: 2.18
+    - _RimIntensity: 0.235
+    - _RimSize: 0.53
     - _RimSmoothness: 0.53
     - _Roughness: 1
     - _Saturation: 1
@@ -156,7 +156,7 @@ Material:
     - _UseOutline: 0
     - _UseReflection: 0
     - _UseRim: 1
-    - _UseSketch: 0
+    - _UseSketch: 1
     - _UseTranslucent: 0
     - _ZWrite: 1
     m_Colors:

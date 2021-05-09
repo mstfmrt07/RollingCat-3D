@@ -31,8 +31,7 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         PlayerPrefs.SetInt("CurrentLevel", PlayerPrefs.GetInt("CurrentLevel") + 1);
-        DG.Tweening.DOTween.KillAll();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LevelControl();
     }
 
     public void RestartLevel()
