@@ -1,7 +1,9 @@
 # RollingCat-3D
 Hypercasual game prototype.
 
-![RollingCat_GIF](https://user-images.githubusercontent.com/60856457/117143193-3e420080-adb9-11eb-970b-3650823ca655.gif)
+
+https://user-images.githubusercontent.com/60856457/117805915-39ba9380-b262-11eb-89c5-26f332662a45.mp4
+
 
 You can use or modify this project freely.
 For any type of questions, please contact me via LinkedIn.
