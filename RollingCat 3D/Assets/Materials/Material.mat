@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Material
   m_Shader: {fileID: 4800000, guid: 6ee274c501732384d9c8bb02a4576937, type: 3}
-  m_ShaderKeywords: _MK_LIGHTMODEL_LAMBERT _MK_LIGHTTYPE_CEL_SHADE_SIMPLE _USEOUTLINE_ON
+  m_ShaderKeywords: _MK_LIGHTMODEL_OREN_NAYER _MK_LIGHTTYPE_CEL_SHADE_MULTI _USEOUTLINE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -108,14 +108,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightCuts: 3
-    - _LightModel: 1
-    - _LightSmoothness: 0
-    - _LightThreshold: 0.3
-    - _LightType: 1
+    - _LightCuts: 3.87
+    - _LightModel: 5
+    - _LightSmoothness: 0.167
+    - _LightThreshold: 0.152
+    - _LightType: 2
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
-    - _MKEditorShowLightBehavior: 0
+    - _MKEditorShowLightBehavior: 1
     - _MKEditorShowMainBehavior: 1
     - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
@@ -135,7 +135,7 @@ Material:
     - _RimIntensity: 0.5
     - _RimSize: 1.5
     - _RimSmoothness: 0.5
-    - _Roughness: 1
+    - _Roughness: 0
     - _Saturation: 1
     - _ShadowIntensity: 0.56
     - _Shininess: 0.275
@@ -159,15 +159,15 @@ Material:
     - _UseTranslucent: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9411711, g: 0.7813324, b: 0.3290043, a: 1}
+    - _Color: {r: 1, g: 0.6647023, b: 0.12549019, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0.4489335, g: 0.21530794, b: 0.4528302, a: 1}
+    - _OutlineColor: {r: 0.26415092, g: 0.18453349, b: 0.055820554, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.7830189, g: 0.054663554, b: 0.729734, a: 1}
+    - _ShadowColor: {r: 0.7924528, g: 0.35312265, b: 0.11512991, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _TranslucentColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_BuildTextureStacks: []

@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public bool gameStarted, gameOver, canStartGame;
     public int collectableCount;
+    public Transform waterTransform;
 
-    public Text collectableCountText;
     public static GameManager Instance;
 
     private Level currentLevel;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CollectableCount", 0);
 
         collectableCount = PlayerPrefs.GetInt("CollectableCount");
-        collectableCountText.text = collectableCount.ToString("00");
+        UIManager.Instance.collectableCountText.text = collectableCount.ToString("00");
     }
 
     public void CreateLevel(bool isNewGame,  Level oldLevel = null)
@@ -97,7 +97,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        waterTransform.parent = null;
         SoundManager.Instance.PlaySound(SoundManager.Instance.gameOverClip);
+        UIManager.Instance.waterPanel.SetActive(true);
         gameOver = true;
         StartCoroutine(GameOverCoroutine());
     }
@@ -115,6 +117,6 @@ public class GameManager : MonoBehaviour
         int collectableCount = PlayerPrefs.GetInt("CollectableCount") + 1;
 
         PlayerPrefs.SetInt("CollectableCount", collectableCount);
-        collectableCountText.text = collectableCount.ToString("00");
+        UIManager.Instance.collectableCountText.text = collectableCount.ToString("00");
     }
 }

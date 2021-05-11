@@ -10,6 +10,7 @@ Material:
   m_Name: FloorTop
   m_Shader: {fileID: 4800000, guid: 881c73b45dda42d4ba29f8c7742329be, type: 3}
   m_ShaderKeywords: _MK_ALBEDO_MAP _MK_LIGHTMODEL_LAMBERT _MK_LIGHTTYPE_CEL_SHADE_SIMPLE
+    _MK_RIM _USERIM_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -108,19 +109,19 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightCuts: 3
+    - _LightCuts: 6
     - _LightModel: 1
-    - _LightSmoothness: 0
+    - _LightSmoothness: 1
     - _LightThreshold: 0.3
     - _LightType: 1
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
     - _MKEditorShowMainBehavior: 1
-    - _MKEditorShowOutlineBehavior: 0
+    - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
     - _MKEditorShowRenderBehavior: 1
-    - _MKEditorShowRimBehavior: 0
+    - _MKEditorShowRimBehavior: 1
     - _MKEditorShowShadowBehavior: 1
     - _MKEditorShowSketchBehavior: 0
     - _MKEditorShowSpecularBehavior: 0
@@ -134,10 +135,10 @@ Material:
     - _ReflectSmoothness: 0
     - _RimIntensity: 0.32
     - _RimSize: 2.18
-    - _RimSmoothness: 0.53
+    - _RimSmoothness: 0.914
     - _Roughness: 1
     - _Saturation: 1
-    - _ShadowIntensity: 1
+    - _ShadowIntensity: 0.83
     - _Shininess: 0.275
     - _SketchScale: 16
     - _SketchToneMax: 1
@@ -154,7 +155,7 @@ Material:
     - _UseDissolve: 0
     - _UseOutline: 0
     - _UseReflection: 0
-    - _UseRim: 0
+    - _UseRim: 1
     - _UseSketch: 0
     - _UseTranslucent: 0
     - _ZWrite: 1
@@ -167,7 +168,7 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.5377358, g: 0.29118901, b: 0.53098845, a: 1}
+    - _ShadowColor: {r: 0.9056604, g: 0.7329682, b: 0.2853684, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _TranslucentColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_BuildTextureStacks: []

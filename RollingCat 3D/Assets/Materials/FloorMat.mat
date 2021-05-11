@@ -133,12 +133,12 @@ Material:
     - _Parallax: 0.02
     - _ReflectIntensity: 0.5
     - _ReflectSmoothness: 0
-    - _RimIntensity: 0.235
+    - _RimIntensity: 0.159
     - _RimSize: 0.53
     - _RimSmoothness: 0.53
     - _Roughness: 1
     - _Saturation: 1
-    - _ShadowIntensity: 1
+    - _ShadowIntensity: 1.12
     - _Shininess: 0.275
     - _SketchScale: 16
     - _SketchToneMax: 1
@@ -168,7 +168,7 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.5377358, g: 0.29118901, b: 0.53098845, a: 1}
+    - _ShadowColor: {r: 1, g: 0.7829722, b: 0.37169808, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _TranslucentColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_BuildTextureStacks: []

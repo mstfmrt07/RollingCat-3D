@@ -10,6 +10,7 @@ public class FallFromEdge : MonoBehaviour
         {
             gameObject.SetActive(false);
             PlayerController.Instance.canMove = false;
+            GameManager.Instance.waterTransform.parent = null;
 
             PlayerController.Instance.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             PlayerController.Instance.GetComponent<Rigidbody>().AddForceAtPosition(-Vector3.up * 100f, collision.GetContact(0).point, ForceMode.Force);

@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public CanvasGroup arrowsPanel;
     public Image[] arrowImages;
     public Text levelText, startText;
+    public Text collectableCountText;
+    public GameObject waterPanel;
 
     public static UIManager Instance;
 
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
 
     void Initialize()
     {
+        waterPanel.SetActive(false);
         arrowsPanel.alpha = 0f;
         arrowsPanel.transform.localScale = Vector3.zero;
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2004656051894498123}
   - component: {fileID: 4338390614532081537}
   - component: {fileID: 6064194538486532261}
-  - component: {fileID: 4580146391655452053}
+  - component: {fileID: -5097551846205139201}
   m_Layer: 0
   m_Name: BeachBall
   m_TagString: Untagged
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableType: 3
   bridgeTransform: {fileID: 0}
---- !u!65 &4580146391655452053
-BoxCollider:
+--- !u!135 &-5097551846205139201
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -108,5 +108,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72, y: 0.7200001, z: 0.71999997}
+  m_Radius: 0.36000004
   m_Center: {x: -0.000000074505806, y: -0.000000059604645, z: 0}

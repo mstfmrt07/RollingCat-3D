@@ -47,6 +47,10 @@ public class Interactable : MonoBehaviour
 
     IEnumerator ToggleBridge(Transform bridge, bool toggleState)
     {
+        while (PlayerController.Instance.isRolling)
+        {
+            yield return new WaitForEndOfFrame();
+        }
         SoundManager.Instance.PlaySound(SoundManager.Instance.toggleClip);
 
         bool willSetAfterToggle = false;
