@@ -1,16 +1,18 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InputManager : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class InputManager : MSingleton<InputManager>, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public GameObject trailRenderer;
+    public float swipeThreshold = 100f;
 
-    Direction direction;
-    Vector2 startPos, endPos;
-    public float swipeThreshold = 0.2f;
-    bool draggingStarted;
+    public Action<Direction> OnSwipeDetected;
 
-    private PlayerController player;
+    private Direction direction;
+    private Vector2 startPos;
+    private Vector2 endPos;
+    private bool draggingStarted;
 
     private void Start()
     {
@@ -19,8 +21,6 @@ public class InputManager : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
 
     void Initialize()
     {
-        player = PlayerController.Instance;
-
         draggingStarted = false;
         trailRenderer.SetActive(false);
         direction = Direction.None;
@@ -28,13 +28,12 @@ public class InputManager : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!GameManager.Instance.gameStarted && GameManager.Instance.canStartGame)
-            GameManager.Instance.StartLevel();
-
         draggingStarted = true;
         trailRenderer.SetActive(true);
         startPos = eventData.pressPosition;
 
+        if (!GameManager.Instance.gameStarted && GameManager.Instance.canStartGame)
+            GameManager.Instance.StartLevel();
         UIManager.Instance.ActivateArrowsPanel(eventData.pressPosition);
     }
 
@@ -73,7 +72,7 @@ public class InputManager : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         {
             if (direction != Direction.None)
             {
-                StartCoroutine(player.RollToDirection(direction));
+                OnSwipeDetected?.Invoke(direction);
             }
 
             trailRenderer.SetActive(false);

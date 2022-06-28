@@ -24,7 +24,6 @@ public class Interactable : MonoBehaviour
                     Destroy(gameObject);
                     break;
                 case InteractableType.ToggleBridge:
-                    Debug.Log("Bridge Toggled");
                     StartCoroutine(ToggleBridge(bridgeTransform, !bridgeTransform.gameObject.activeSelf)); // toggle the reverse state
                     break;
                 default:

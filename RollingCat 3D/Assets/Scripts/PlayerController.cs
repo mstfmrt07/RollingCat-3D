@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MSingleton<PlayerController>
 {
     public float rollDuration = 1f;
     public LayerMask contactWallLayer;
@@ -13,16 +13,6 @@ public class PlayerController : MonoBehaviour
     public Transform[] forcePoints;
     [SerializeField] private Transform ghostPlayer, pivot;
 
-    public static PlayerController Instance;
-
-    void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
-            Destroy(gameObject);
-    }
-
     private void Start()
     {
         Initialize();
@@ -30,10 +20,16 @@ public class PlayerController : MonoBehaviour
 
     void Initialize()
     {
+        InputManager.Instance.OnSwipeDetected += Roll;
         canMove = false;
         dominantAxis = GetDominantAxis(transform);
         Vector3 colliderSize = GetComponent<BoxCollider>().size;
         halfScale = new Vector2(colliderSize.x, colliderSize.y) / 2;
+    }
+
+    public void Roll(Direction direction)
+    {
+        StartCoroutine(RollToDirection(direction));
     }
 
     public IEnumerator RollToDirection(Direction swipeDirection)

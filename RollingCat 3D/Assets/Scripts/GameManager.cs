@@ -2,24 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MSingleton<GameManager>
 {
     public bool gameStarted, gameOver, canStartGame;
     public int collectableCount;
     public Transform waterTransform;
 
-    public static GameManager Instance;
-
     private Level currentLevel;
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
-            Destroy(gameObject);
-    }
-
     private void Start()
     {
         Initialize();

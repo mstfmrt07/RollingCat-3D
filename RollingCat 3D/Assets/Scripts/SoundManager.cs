@@ -1,25 +1,16 @@
 ﻿using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : MSingleton<SoundManager>
 {
-
     public AudioClip gameOverClip;
     public AudioClip victoryClip;
     public AudioClip collectClip;
     public AudioClip swipeClip;
     public AudioClip toggleClip;
-    
-    public static SoundManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (Instance != this)
-            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         if (!PlayerPrefs.HasKey("Sound"))
             PlayerPrefs.SetInt("Sound", 1);

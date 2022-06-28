@@ -1,20 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MSingleton<LevelManager>
 {
     public Level[] levels;
-    public static LevelManager Instance { get; private set; }
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (Instance != this)
-            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         LevelControl();
     }

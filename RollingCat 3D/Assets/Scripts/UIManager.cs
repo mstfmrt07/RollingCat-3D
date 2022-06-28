@@ -2,23 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MSingleton<UIManager>
 {
     public CanvasGroup arrowsPanel;
     public Image[] arrowImages;
     public Text levelText, startText;
     public Text collectableCountText;
     public GameObject waterPanel;
-
-    public static UIManager Instance;
-
-    void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
-            Destroy(gameObject);
-    }
 
     private void Start()
     {
@@ -27,7 +17,9 @@ public class UIManager : MonoBehaviour
 
     void Initialize()
     {
-        waterPanel.SetActive(false);
+        if (waterPanel != null)
+            waterPanel.SetActive(false);
+
         arrowsPanel.alpha = 0f;
         arrowsPanel.transform.localScale = Vector3.zero;
     }
