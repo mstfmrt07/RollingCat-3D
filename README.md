@@ -1,5 +1,5 @@
 # RollingCat-3D
-Hypercasual game prototype.
+Mobile puzzle game prototype.
 
 
 https://user-images.githubusercontent.com/60856457/117805915-39ba9380-b262-11eb-89c5-26f332662a45.mp4
