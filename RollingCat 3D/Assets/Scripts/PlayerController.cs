@@ -10,7 +10,6 @@ public class PlayerController : MSingleton<PlayerController>
     private Vector2 halfScale;
     public bool isRolling { get; private set; }
     public bool canMove;
-    public Transform[] forcePoints;
     [SerializeField] private Transform ghostPlayer, pivot;
 
     private void Start()

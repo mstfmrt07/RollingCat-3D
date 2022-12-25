@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
             switch (interactableType)
             {
                 case InteractableType.LevelSuccess:
-                    StartCoroutine(CheckFacingDirection());
+                    StartCoroutine(CheckFinishLevel());
                     break;
                 case InteractableType.LevelFail:
                     GameManager.Instance.GameOver();
@@ -33,7 +33,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    IEnumerator CheckFacingDirection()
+    IEnumerator CheckFinishLevel()
     {
         while (PlayerController.Instance.isRolling)
         {
@@ -50,25 +50,30 @@ public class Interactable : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
         }
-        SoundManager.Instance.PlaySound(SoundManager.Instance.toggleClip);
 
-        bool willSetAfterToggle = false;
-        if (!bridgeTransform.gameObject.activeSelf)
-            bridgeTransform.gameObject.SetActive(true);
-        else
-            willSetAfterToggle = true;
-
-        foreach (Transform block in bridge)
+        if (PlayerController.Instance.dominantAxis == DominantAxis.Y && !GameManager.Instance.gameOver)
         {
-            block.DOScale(toggleState ? 1f : 0f, 0.4f).SetEase(toggleState ? Ease.OutBack : Ease.InBack);
-            yield return new WaitForSeconds(0.2f);
-        }
+            SoundManager.Instance.PlaySound(SoundManager.Instance.toggleClip);
 
-        if (willSetAfterToggle)
-        {
-            yield return new WaitForSeconds(0.3f);
-            bridgeTransform.gameObject.SetActive(false);
+            bool willSetAfterToggle = false;
+            if (!bridgeTransform.gameObject.activeSelf)
+                bridgeTransform.gameObject.SetActive(true);
+            else
+                willSetAfterToggle = true;
+
+            foreach (Transform block in bridge)
+            {
+                block.DOScale(toggleState ? 1f : 0f, 0.4f).SetEase(toggleState ? Ease.OutBack : Ease.InBack);
+                yield return new WaitForSeconds(0.2f);
+            }
+
+            if (willSetAfterToggle)
+            {
+                yield return new WaitForSeconds(0.3f);
+                bridgeTransform.gameObject.SetActive(false);
+            }
         }
+       
     }
 }
 

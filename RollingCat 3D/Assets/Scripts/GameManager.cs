@@ -88,7 +88,6 @@ public class GameManager : MSingleton<GameManager>
     {
         waterTransform.parent = null;
         SoundManager.Instance.PlaySound(SoundManager.Instance.gameOverClip);
-        UIManager.Instance.waterPanel.SetActive(true);
         gameOver = true;
         StartCoroutine(GameOverCoroutine());
     }
@@ -96,6 +95,7 @@ public class GameManager : MSingleton<GameManager>
     IEnumerator GameOverCoroutine()
     {
         yield return new WaitForSeconds(SoundManager.Instance.gameOverClip.length);
+        UIManager.Instance.waterPanel.SetActive(true);
         LevelManager.Instance.RestartLevel();
     }
 
