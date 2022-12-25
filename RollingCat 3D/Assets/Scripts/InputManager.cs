@@ -83,26 +83,6 @@ public class InputManager : MSingleton<InputManager>, IDragHandler, IBeginDragHa
             UIManager.Instance.DeactivateArrowsPanel();
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            OnSwipeDetected?.Invoke(Direction.Left);
-        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            OnSwipeDetected?.Invoke(Direction.Right);
-        }
-        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            OnSwipeDetected?.Invoke(Direction.Up);
-        }
-        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            OnSwipeDetected?.Invoke(Direction.Down);
-        }
-    }
 }
 
 public enum Direction { Left, Up, Right, Down, None }
